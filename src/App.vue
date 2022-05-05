@@ -1,20 +1,19 @@
 <template>
   <div class="container">
-    
-    <div class="col-lg-6 col-md-10 mx-auto">
       <div class="row text-center my-4">
         <h1>TODO APP</h1>
         <p> A very simple todo app.</p>
       </div>
-
+      
       <task-input
+        class="row col-sm-12 col-md-11 col-lg-9 col-xxl-8 bg-white shadow-sm rounded mx-auto p-3 px-md-5 mb-4"
         @addTodoTask="appendTask"
       />
 
       <todo-task-container
+        class="row col-md-11 col-lg-9 col-xxl-8 bg-white shadow-sm rounded mx-auto p-3 px-md-5"
         :tasks="tasks"
       />
-    </div>
   </div>
 </template>
 

@@ -1,15 +1,13 @@
 <template>
-  <div class="row">
-          <div class="bg-white shadow-sm rounded mx-auto py-3 px-5">
-              <todo-task
-                v-for="(task, index) in todoTasks"
-                :description="task.description"
-                :priority="task.priority"
-                :key="JSON.stringify(task)"
-                @deleteTask="removeTodoTask(index)"
-              />
-          </div>
-      </div>
+    <div>
+        <todo-task
+            v-for="(task, index) in todoTasks"
+            :description="task.description"
+            :priority="task.priority"
+            :key="JSON.stringify(task)"
+            @deleteTask="removeTodoTask(index)"
+        />
+    </div>
 </template>
 
 <script>

@@ -1,19 +1,19 @@
 <template>
   <ul 
     class="shadow-sm border border-2 bg-light rounded p-2 my-2 list-group list-group-flush"
-    :class="{ 
-              'border-danger': taskPriority===3, 
-              'border-warning': taskPriority===2, 
-              'border-secondary': taskPriority === 1 
-            }"
+    :class="{ 'border-danger': taskPriority===3, 'border-warning': taskPriority===2, 'border-secondary': taskPriority === 1 }"
   >
+
+    <!-- content -->   
     <li class="list-group-item bg-light">
       <div class="form-check">
+
         <input 
           type="checkbox" 
           class="form-check-input"
           @click="checkBox"
         >
+
         <label 
           class="form-check-label"
           :class="{ 'text-decoration-line-through': checked === true }"
@@ -21,17 +21,23 @@
         >
           {{ taskDescription }}
         </label>
-          <input 
+
+        <input 
+          class="form-control text-center mx-2"
           type="text"
           v-if="editEnabled"
           v-model="taskDescription"
           @keyup.enter="editEnable" 
         >
+
         <todo-task-options-toggle 
           @toggled="enableOptions"
         />
+        
       </div>
     </li>
+
+    <!-- options panel --> 
     <li 
       class="list-group-item bg-light"
       v-if="showOptions"
@@ -42,6 +48,7 @@
         @todoTaskDelete="$emit('deleteTask')"
       />
     </li>
+
   </ul>
 </template>
 
